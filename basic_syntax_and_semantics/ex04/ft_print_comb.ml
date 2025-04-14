@@ -1,31 +1,31 @@
 let ft_print_comb () =
-	let check_separation n1 n2 n3 =
-		if n1 == 7 && n2 == 8 && n3 == 9
+	let check_separation i j k =
+		if i == 7 && j == 8 && k == 9
 		then ()
 		else print_string ", "
 	in
-	let rec loop3 n1 n2 n3 =
-		if n3 <= 9 then
+	let rec loop3 i j k =
+		if k <= 9 then
 			begin
-				print_int n1;
-				print_int n2;
-				print_int n3;
-				check_separation n1 n2 n3;
-				loop3 n1 n2 (n3 + 1)
+				print_int i;
+				print_int j;
+				print_int k;
+				check_separation i j k;
+				loop3 i j (k + 1)
 			end
 	in
-	let rec loop2 n1 n2 =
-		if n2 <= 8 then
+	let rec loop2 i j =
+		if j <= 8 then
 			begin
-				loop3 n1 n2 (n2 + 1);
-				loop2 n1 (n2 + 1)
+				loop3 i j (j + 1);
+				loop2 i (j + 1)
 			end
 	in
-	let rec loop1 n1 =
-		if n1 <= 7 then
+	let rec loop1 i =
+		if i <= 7 then
 			begin
-				loop2 n1 (n1 + 1);
-				loop1 (n1 + 1)
+				loop2 i (i + 1);
+				loop1 (i + 1)
 			end
 	in
 	loop1 0;
