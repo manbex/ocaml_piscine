@@ -10,3 +10,6 @@ let ft_print_alphabet () =
 	in
 	loop(char_value_a);
 	print_char '\n'
+
+
+let () = ft_print_alphabet ()

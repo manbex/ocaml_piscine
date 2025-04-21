@@ -4,12 +4,12 @@ all: build clean
 
 build:
 	@for n in $(DIRS); do \
-		ocamlopt -I ex$$n ex$$n/*.ml test/ex$$n.ml -o $$n; \
+		ocamlopt -I ex$$n ex$$n/*.ml -o $$n; \
 	done
 
 clean:
 	@for n in $(DIRS); do \
-		rm ex$$n/*.cmi ex$$n/*.cmx ex$$n/*o test/*.cmx test/*.cmi test/*.o 2>/dev/null || true; \
+		rm ex$$n/*.cmi ex$$n/*.cmx ex$$n/*o 2>/dev/null || true; \
 	done
 
 fclean: clean

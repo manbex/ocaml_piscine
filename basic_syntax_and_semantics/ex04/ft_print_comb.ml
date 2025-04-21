@@ -30,3 +30,6 @@ let ft_print_comb () =
 	in
 	loop1 0;
 	print_string "\n"
+
+
+let () = ft_print_comb ()

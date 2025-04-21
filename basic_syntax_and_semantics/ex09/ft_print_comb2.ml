@@ -33,3 +33,5 @@ let ft_print_comb2 () =
 	loop1 0;
 	print_char '\n'
 
+
+let () = ft_print_comb2 ()

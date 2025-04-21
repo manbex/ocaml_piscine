@@ -15,3 +15,11 @@ let ft_countdown n =
 	else
 		loop n
 	
+
+let () =
+	print_endline "=== test with 5 ===";
+	ft_countdown(5);
+	print_endline "\n=== test with 12 ===";
+	ft_countdown(12);
+	print_endline "\n=== test with -1 ===";
+	ft_countdown(-1)
