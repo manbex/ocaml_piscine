@@ -17,23 +17,28 @@ let () =
 		| (a, b) ->
 			print_int a;
 			f b;
-			print_char ' '
 	in
 
 	let print_list f l =
-		let rec loop lst = match lst with
-			| [] -> ()
-			| head::body -> begin print_tuple f (head); loop body end
+		let print_space i =
+			if i == 0
+			then ()
+			else print_string " "
 		in
-		loop l;
-		print_endline ""
+		let rec loop lst i = match lst with
+			| [] -> ()
+			| head::body -> begin print_space i; f (head); loop body (i+1) end
+		in
+		print_string "[";
+		loop l 0;
+		print_endline "]"
 	in
 
 	print_endline "=== test with chars a a a b b b c d d d d ===";
-	print_list print_char (encode ['a'; 'a'; 'a'; 'b'; 'b'; 'b'; 'c'; 'd'; 'd'; 'd'; 'd']);
+	print_list (print_tuple print_char) (encode ['a'; 'a'; 'a'; 'b'; 'b'; 'b'; 'c'; 'd'; 'd'; 'd'; 'd']);
 	print_endline "=== test with ints 1 1 1 2 2 2 3 3 3 3 3 3 4 5 5 5 ===";
-	print_list print_int (encode [1; 1; 1; 2; 2; 2; 3; 3; 3; 3; 3; 3; 4; 5; 5; 5]);
+	print_list (print_tuple print_int) (encode [1; 1; 1; 2; 2; 2; 3; 3; 3; 3; 3; 3; 4; 5; 5; 5]);
 	print_endline "=== test with strings \"lol\" \"lol\" \"lol\" \"coucou\" ===";
-	print_list print_string (encode ["lol"; "lol"; "lol"; "coucou"]);
+	print_list (print_tuple print_string) (encode ["lol"; "lol"; "lol"; "coucou"]);
 	print_endline "=== test with empty list [] ===";
-	print_list print_int (encode [])
+	print_list (print_tuple print_int) (encode [])

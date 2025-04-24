@@ -1,4 +1,4 @@
-DIRS = 00
+DIRS = 00 01
 
 all: build clean
 
