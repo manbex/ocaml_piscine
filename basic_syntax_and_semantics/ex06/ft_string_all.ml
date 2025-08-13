@@ -1,6 +1,6 @@
 let ft_string_all func str  =
+	let length = String.length str in
 	let rec loop i =
-		let length = String.length str in
 		if i < length then
 			if func (String.get str i) == true
 				then loop (i + 1)

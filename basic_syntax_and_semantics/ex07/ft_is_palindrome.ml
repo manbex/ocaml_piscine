@@ -19,8 +19,8 @@ let () =
 
 	print_endline "=== test with \"radar\" ===";
 	print_bool (ft_is_palindrome "radar");
-	print_endline "=== test with \"madam\" ===";
-	print_bool (ft_is_palindrome "madam");
+	print_endline "=== test with \"ABBA\" ===";
+	print_bool (ft_is_palindrome "ABBA");
 	print_endline "=== test with \"car\" ===";
 	print_bool (ft_is_palindrome "car");
 	print_endline "=== test with \"\" ===";
