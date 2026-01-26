@@ -1,11 +1,11 @@
-let ft_string_all func str  =
+let ft_string_all func str =
 	let length = String.length str in
 	let rec loop i =
-		if i < length then
-			if func (String.get str i) == true
-				then loop (i + 1)
-				else false
-		else true
+		if i = length
+			then true
+		else if func (String.get str i) == false
+			then false
+		else loop (i + 1)
 	in
 	loop 0
 
@@ -20,6 +20,7 @@ let () =
 			else print_endline "false"
 	in
 
+	begin
 	print_endline "=== test with is_digit on \"0123456789\" ===";
 	print_bool (ft_string_all is_digit "0123456789");
 	print_endline "=== test with is_digit on \"012EAS67B9\" ===";
@@ -28,3 +29,4 @@ let () =
 	print_bool (ft_string_all is_capital_letter "ABCDEFGH");
 	print_endline "=== test with is_capital_letter on \"ABCDEfGH\" ===";
 	print_bool (ft_string_all is_capital_letter "ABCDEfGH")
+	end

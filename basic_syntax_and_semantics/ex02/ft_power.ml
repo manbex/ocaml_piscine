@@ -1,10 +1,11 @@
 let rec ft_power x y =
-	if y > 0
-	then x * (ft_power x (y - 1))
-	else 1
+	if y = 0
+	then 1
+	else x * (ft_power x (y - 1))
 
 
 let () =
+	begin
 	print_endline "=== test with 5^2 ===";
 	print_int (ft_power 5 2);
 	print_char '\n';
@@ -17,3 +18,4 @@ let () =
 	print_endline "=== test with 9^0 ===";
 	print_int (ft_power 8 0);
 	print_char '\n'
+	end

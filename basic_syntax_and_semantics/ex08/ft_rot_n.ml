@@ -5,8 +5,7 @@ let ft_rot_n n str =
 			then int_of_char 'a'
 		else if c >= 'A' && c <= 'Z'
 			then int_of_char 'A'
-		else
-			-1
+		else -1
 		in
 		if base_value > 0 then
 			let c_value = int_of_char c in
@@ -18,6 +17,7 @@ let ft_rot_n n str =
 
 
 let () =
+	begin
 	print_endline "=== test with 1 on \"abcdefghijklmnopqrstuvwxyz\" ===";
 	print_endline (ft_rot_n 1 "abcdefghijklmnopqrstuvwxyz");
 	print_endline "=== test with 13 on \"abcdefghijklmnopqrstuvwxyz\" ===";
@@ -32,3 +32,4 @@ let () =
 	print_endline (ft_rot_n 42 "");
 	print_endline "=== test with 1 on \"NBzlk qnbjr !\" ===";
 	print_endline (ft_rot_n 1 "NBzlk qnbjr !");
+	end

@@ -4,7 +4,7 @@ all: build clean
 
 build:
 	@for n in $(DIRS); do \
-		ocamlopt -I ex$$n ex$$n/*.ml -o $$n; \
+		ocamlopt ex$$n/*.ml -o $$n; \
 	done
 
 clean:
@@ -18,3 +18,5 @@ fclean: clean
 	done
 
 re: fclean all
+
+.PHONY: all build clean fclean re
