@@ -9,7 +9,7 @@ build:
 
 clean:
 	@for n in $(DIRS); do \
-		rm ex$$n/*.cmi ex$$n/*.cmx ex$$n/*o 2>/dev/null || true; \
+		rm ex$$n/*.cmi ex$$n/*.cmx ex$$n/*.o 2>/dev/null || true; \
 	done
 
 fclean: clean
