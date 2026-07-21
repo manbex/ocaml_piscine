@@ -1,12 +1,15 @@
 let ft_string_all func str =
-	let length = String.length str in
+	let length = String.length str
+	in
+
 	let rec loop i =
 		if i = length
 			then true
-		else if func (String.get str i) == false
+		else if func (String.get str i) = false
 			then false
 		else loop (i + 1)
 	in
+
 	loop 0
 
 
@@ -15,7 +18,7 @@ let () =
 	let is_uppercase c = c >= 'A' && c <= 'Z' in
 
 	let print_bool value =
-		if value == true
+		if value = true
 			then print_endline "true"
 			else print_endline "false"
 	in

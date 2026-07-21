@@ -6,12 +6,13 @@ let ft_is_palindrome str =
 			then false
 		else loop (i + 1) (j - 1)
 	in
+
 	loop 0 (String.length str)
 
 
 let () =
 	let print_bool value =
-		if value == true
+		if value = true
 		then print_endline "true"
 		else print_endline "false"
 	in

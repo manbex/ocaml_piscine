@@ -8,12 +8,14 @@ let ft_print_comb2 () =
 			print_char ' '
 			end
 	in
+
 	let print_number n =
 		begin
 		(if n <= 9 then print_char '0');
 		print_int n
 		end
 	in
+
 	let rec loop2 i j =
 		if j <= 99 then
 			begin
@@ -24,6 +26,7 @@ let ft_print_comb2 () =
 			loop2 i (j + 1)
 			end
 	in
+
 	let rec loop1 i =
 		if i <= 98 then
 			begin
@@ -31,6 +34,7 @@ let ft_print_comb2 () =
 			loop1 (i + 1)
 			end
 	in
+
 	loop1 0;
 	print_char '\n'
 

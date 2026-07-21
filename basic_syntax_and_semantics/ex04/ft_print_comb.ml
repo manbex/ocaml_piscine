@@ -4,6 +4,7 @@ let ft_print_comb () =
 		then ()
 		else print_string ", "
 	in
+
 	let rec loop3 i j k =
 		if k <= 9 then
 			begin
@@ -14,6 +15,7 @@ let ft_print_comb () =
 			loop3 i j (k + 1)
 			end
 	in
+
 	let rec loop2 i j =
 		if j <= 8 then
 			begin
@@ -21,6 +23,7 @@ let ft_print_comb () =
 			loop2 i (j + 1)
 			end
 	in
+
 	let rec loop1 i =
 		if i <= 7 then
 			begin
@@ -28,6 +31,7 @@ let ft_print_comb () =
 			loop1 (i + 1)
 			end
 	in
+
 	loop1 0;
 	print_string "\n"
 

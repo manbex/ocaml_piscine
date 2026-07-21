@@ -6,6 +6,7 @@ let ft_print_rev str =
 			loop (i - 1)
 			end
 	in
+
 	loop ((String.length str) - 1);
 	print_char '\n'
 

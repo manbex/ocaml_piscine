@@ -1,5 +1,7 @@
 let ft_print_alphabet () =
-	let z = int_of_char 'z' in
+	let z = int_of_char 'z'
+	in
+
 	let rec loop c =
 		if c <= z then
 			begin
@@ -7,6 +9,7 @@ let ft_print_alphabet () =
 			loop (c + 1)
 			end
 	in
+
 	loop (int_of_char 'a');
 	print_char '\n'
 
