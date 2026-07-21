@@ -1,12 +1,12 @@
-let converges f x n =
-	let rec loop i value =
-		let next = f value in
-		if value == next then true
-		else if i == 0 then false
-		else loop (i-1) next
-	in
-	if n < 0 then false
-	else loop n x
+let rec converges f x n =
+	if n < 0
+		then false
+	else if x = f x
+		then true
+	else if n = 0
+		then false
+	else converges f (f x) (n-1)
+
 
 let () =
 	print_endline ("=== test with (( * ) 2) 2 (-1) ===");

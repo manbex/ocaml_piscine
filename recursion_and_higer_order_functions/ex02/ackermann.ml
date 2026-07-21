@@ -1,12 +1,14 @@
 let ackermann x y =
 	let rec loop m n =
-		if m == 0 then n + 1
-		else if n == 0 then loop (m-1) 1
+		if m = 0 then n + 1
+		else if n = 0 then loop (m-1) 1
 		else loop (m-1) (loop m (n-1))
 	in
+
 	if x < 0 || y < 0
 	then (-1)
 	else loop x y
+
 
 let () =
 	let test m n =

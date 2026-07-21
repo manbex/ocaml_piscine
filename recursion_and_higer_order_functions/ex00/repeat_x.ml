@@ -1,12 +1,14 @@
 let repeat_x n =
 	let rec loop str count =
-		if count == 0
+		if count = 0
 		then str
 		else loop (str ^ "x") (count - 1)
 	in
+
 	if n < 0
 	then "Error"
 	else loop "" n
+
 
 let () =
 	let test n =

@@ -4,9 +4,11 @@ let ft_sum f i n =
 		then sum
 		else (loop [@tailcall]) (i+1) (sum +. f i)
 	in
+
 	if n < i
 	then nan
 	else loop i 0.0
+
 
 let () =
 	print_endline "=== test with (fun i -> float_of_int (i * i)) 1 0 ===";
